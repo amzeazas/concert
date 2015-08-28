@@ -11,13 +11,11 @@
 
 <% else %>
 
-  <span style="padding-left: 20px; display:block"><p>There is no venue informatino for this band.</p></span>
+  <span style="padding-left: 20px; display:block"><p>There is no venue information for this band.</p></span>
 <% end %>
 <br>
 <center>
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default"><a href="/band/<%= @band.id %>/edit">Update Band</a></button>
-</div>
+<h3><a href="/band/<%= @band.id %>/edit">Update Band</a></h3>
 </center>
 <br>
 <br>
