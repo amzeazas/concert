@@ -44,7 +44,7 @@ patch('/band/:id') do
   redirect("/band/#{@band.id()}")
 end
 
-patch('/band/:id') do
+patch('/band/:id/venues') do
   band_id = params.fetch("id").to_i()
   @band = Band.find(band_id)
   venue_ids = params.fetch("venue_ids")

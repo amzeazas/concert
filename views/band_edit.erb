@@ -11,12 +11,12 @@
 <br>
 <h4>Select all venues where <%= @band.name %> has played:</h4>
 <% if @venues.any?() %>
-  <form action="/band/<%= @band.id %>" method="post">
+  <form action="/band/<%= @band.id %>/venues" method="post">
     <input type="hidden" name="_method" value="patch">
     <% @venues.each() do |venue| %>
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="venue_ids[]" value="<%= venue.id() %>"><%= venue.name() %>>
+          <input type="checkbox" name="venue_ids[]" value="<%= venue.id() %>"><%= venue.name() %>
         </label>
       </div>
     <% end %>
