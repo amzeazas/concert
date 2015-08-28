@@ -37,3 +37,17 @@ describe("updating a band", {:type => :feature}) do
     expect(page).to have_content("Chris Isaak")
   end
 end
+
+describe("add a venue to band", {:type => :feature}) do
+  it("allows a user to add venue to a band") do
+    visit("/")
+    test_band = Band.create({:name => "Aerosmith"})
+    test_venue = Venue.create({:name => "Key Arena"})
+    click_link("SEE ALL BANDS")
+    click_link("Aerosmith")
+    click_link("Update Band")
+    check("Key Arena")
+    click_button("Add Venues")
+    expect(page).to have_content("Key Arena")
+  end
+end
