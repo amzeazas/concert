@@ -26,6 +26,12 @@ get('/band/:id') do
   erb(:band)
 end
 
+delete('/band/:id') do
+  @band = Band.find(params.fetch("id").to_i())
+  @band.delete()
+  redirect('/bands')
+end
+
 get('/venue/new') do
   #add info for adding new venue page
 end
