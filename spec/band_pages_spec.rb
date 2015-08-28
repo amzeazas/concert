@@ -24,3 +24,16 @@ describe("deleting a band", {:type => :feature}) do
     expect(page).to have_content("Bands")
   end
 end
+
+describe("updating a band", {:type => :feature}) do
+  it("allows a user to update a band") do
+    visit("/")
+    test_band = Band.create({:name => "Chris Isaac"})
+    click_link("SEE ALL BANDS")
+    click_link("Chris Isaac")
+    click_link("Update Band")
+    fill_in("name", :with => "Chris Isaak")
+    click_button("Update")
+    expect(page).to have_content("Chris Isaak")
+  end
+end
