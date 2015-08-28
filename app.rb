@@ -54,7 +54,12 @@ patch('/band/:id') do
 end
 
 get('/venue/new') do
-  #add info for adding new venue page
+  erb(:venue_form)
+end
+
+post('/venues') do
+  @venue = Venue.create({:name => params.fetch("name")})
+  redirect('/venues')
 end
 
 get('/venues') do
