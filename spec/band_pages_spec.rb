@@ -38,7 +38,7 @@ describe("updating a band", {:type => :feature}) do
   end
 end
 
-describe("add a venue to band", {:type => :feature}) do
+describe("adding a venue to band", {:type => :feature}) do
   it("allows a user to add venue to a band") do
     visit("/")
     test_band = Band.create({:name => "Aerosmith"})
