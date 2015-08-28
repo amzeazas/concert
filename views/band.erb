@@ -1,0 +1,31 @@
+<center><h1><b><u><%= @band.name() %></u></b></h1></center>
+<br>
+<br>
+<h4>Venues Played:</h4>
+<% if @band.venues.any?() %>
+  <ul>
+    <% @band.venues.each() do |venue| %>
+      <li><a href="/venue/<%= venue.id() %>"><%= venue.name() %></a></li>
+    <% end %>
+  </ul>
+
+<% else %>
+
+  <span style="padding-left: 20px; display:block"><p>There is no venue informatino for this band.</p></span>
+<% end %>
+<br>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default"><a href="/band/<%= @band.id %>/edit">Update Band</a></button>
+</div>
+</center>
+<br>
+<br>
+<form action="/band/<%= @band.id() %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button class="btn-danger btn" type="submit">DELETE BAND</button>
+</form>
+<br>
+<a href="/bands">Back</a>
+<br>
+<a href="/">Home Page</a>
