@@ -63,5 +63,6 @@ post('/venues') do
 end
 
 get('/venues') do
-  #add info for venues page
+  @venues = Venue.all()
+  erb(:venues)
 end
