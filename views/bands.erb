@@ -1,0 +1,18 @@
+<center>
+  <h1>Bands:</h1>
+</center>
+<% if @bands.any?() %>
+<ul>
+  <% @bands.each() do |band| %>
+  <li><a href="/band/<%= band.id() %>"><%= band.name() %></a></li>
+  <% end %>
+</ul>
+
+<% else %>
+<p>You have no bands, dude! <a href="/band/new">Add a band!</a></p>
+<% end %>
+<br>
+<br>
+<a href="/band/new">Add A Band</a>
+<br>
+<a href="/">Home Page</a>
